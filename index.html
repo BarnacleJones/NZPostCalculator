@@ -32,19 +32,17 @@
     <button id= "calculateButton" onclick="getSize()">Submit</button>
     <p>Note: Max 3kg for any size</p>
     <h2 id="calculation"></h2>
+    <p id="measurements"></p>
     <img id="bag" src="" alt="bag">
     </main>
     
 </body>
 <script>
-    //4.50 bag internal dimensions - 125mmx230mm
-    //5.60 bag internal dimensions - 185mmx270mm
-    //7.20 bag internal dimensions - 250mmx310mm
-    //8.40 bag internal dimensions - 270mmx370mm
-    //11 bag internal dimensions - 395mmx455mm
+
     
 
         let showCalc = document.getElementById("calculation");
+        let showMeasurement = document.getElementById("measurements")
   
 
         function getSize()
@@ -54,34 +52,44 @@
             //if width and height are below 125mmx230mm
             if ((width <=125 && height<=230)) {
                 showCalc.innerText = "$4.50 bag";
+                showMeasurement.innerText = "Inner dimensions: 125mmx230mm";
                 let image = document.getElementById("bag")
                 image.setAttribute("src", "images/1.jpg"); 
 
             }
             else if (width <= 185 && height <= 270 ) {
                 showCalc.innerText = "$5.60 bag";  
+                showMeasurement.innerText = "Inner dimensions: 185mmx270mm";
                 let image = document.getElementById("bag")
                 image.setAttribute("src", "images/2.jpg");                     
             }                
             else if (width <= 250 && height <= 310 ) {
                 showCalc.innerText = "$7.20 bag"; 
+                showMeasurement.innerText = "Inner dimensions: 250mmx310mm";
                 let image = document.getElementById("bag")
                 image.setAttribute("src", "images/3.jpg");                    
             }
             
             else if (width <= 270 && height <= 370 ) {
                 showCalc.innerText = "$8.40 bag";   
+                showMeasurement.innerText = "Inner dimensions: 270mmx370mm";
                 let image = document.getElementById("bag")
                 image.setAttribute("src", "images/4.jpg");                 
             }
             else if (width <= 395 && height <= 455 ) {
                 showCalc.innerText = "$11 bag";   
+                showMeasurement.innerText = "Inner dimensions: 395mmx455mm";
                 let image = document.getElementById("bag")
                 image.setAttribute("src", "images/6.jpg");                 
             }
             else{showCalc.innerText = "Too big";
-            let image = document.getElementById("bag")
+            showMeasurement.innerText = "Inner dimensions exceed 396mmx456mm";
+            let image = document.getElementById("bag");
                 image.setAttribute("src", "images/0.png");}
         }
-
+    //4.50 bag internal dimensions - 125mmx230mm
+    //5.60 bag internal dimensions - 185mmx270mm
+    //7.20 bag internal dimensions - 250mmx310mm
+    //8.40 bag internal dimensions - 270mmx370mm
+    //11 bag internal dimensions - 395mmx455mm
 </script>
